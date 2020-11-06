@@ -22,7 +22,10 @@ const mapStateToProps = state => {
     return {
         characters: characters,
         currentPage: state.apps.currentPage,
-        totalPage: state.apps.totalPage
+        totalPage: state.apps.totalPage,
+        searchText: state.apps.searchText,
+        speciesFilter: state.apps.speciesFilter,
+        statusFilter: state.apps.statusFilter
     }
 }
 

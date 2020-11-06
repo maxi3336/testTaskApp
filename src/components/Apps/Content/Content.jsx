@@ -15,11 +15,13 @@ const Content = props => {
         else pages.push(<button className="btn btn-primary mr-2" onClick={() => props.setCurrentPage(i)}>{i}</button>)
     }
 
+    let filtered = !!(props.searchText || props.speciesFilter || props.statusFilter)
+
     return (
         <div className="mt-5 ml-2 mr-2 d-flex flex-column align-items-center">
-            <div className="d-flex align-items-center mb-5">
-                {pages}
-            </div>
+            {
+                !filtered ? <div className="d-flex align-items-center mb-5">{pages}</div> : ''
+            }
             <div className="d-flex flex-wrap justify-content-center">
                 {props.characters}
             </div>

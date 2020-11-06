@@ -1,8 +1,13 @@
-import background from "../assets/BackgroundLights.jpg";
+import background from "../assets/BackgroundLights.svg";
 
 export default {
     main: {
-      backgroundStyle: {backgroundImage: `url(${background})`, backgroundPosition: 'bottom', backgroundRepeat: 'no-repeat'}
+      backgroundStyle: {
+          backgroundColor: '#EBEBEA',
+          backgroundImage: `url(${background})`,
+          backgroundPosition: 'bottom',
+          backgroundRepeat: 'no-repeat'
+      }
     },
     menu: {
         activeLinkStyle: {background: '#333333', color: 'white'},

@@ -2,7 +2,7 @@
 export default {
     menu: {
         activeLinkStyle: {background: '#333333', color: 'white'},
-        asideMenuStyle: {width: 350, background: 'rgba(245, 245, 244, .7)', height: 875}
+        asideMenuStyle: {width: 300, background: 'rgba(245, 245, 244, .7)', height: 875}
     },
     offers: {
         elementBackground: {background: 'rgba(245, 245, 244, 0.7)', borderRadius: 16},
@@ -14,10 +14,8 @@ export default {
             elementBackground: {
                 backgroundColor: '#EBEBEA',
                 boxShadow: 'inset 0px 0.5px 4px rgba(96, 97, 112, 0.32)',
-                borderRadius: 8,
-                fontSize: 14
-            },
-            filterBtn: {fontSize: 14}
+                borderRadius: 8
+            }
         }
     }
 

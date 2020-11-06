@@ -62,11 +62,7 @@ export const getCharacters = (currentPage=1) => async dispatch => {
 }
 
 export const getAllCharacters = () => async dispatch => {
-    let characters = []
-    for(let i = 1; i <= 20; i++){
-        let response = await useAPI.getCharacters(i)
-        characters.push(...response.data.results)
-    }
+    let characters = await useAPI.getAllCharacters()
     dispatch(setAllCharacters(characters))
 }
 

@@ -7,5 +7,13 @@ const instance = axios.create({
 export const useAPI = {
     getCharacters (currentPage) {
         return instance.get(`character/?page=${currentPage}`)
+    },
+    async getAllCharacters () {
+        let characters = []
+        for(let i = 1; i <= 20; i++){
+            let response = await this.getCharacters(i)
+            characters.push(...response.data.results)
+        }
+        return characters
     }
 }

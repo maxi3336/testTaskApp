@@ -4,7 +4,7 @@ import SearchContainer from "./Search/SearchContainer";
 
 const Apps = () => {
     return (
-        <div className="mt-5 ml-5">
+        <div className="ml-5">
             <SearchContainer />
             <ContentContainer />
         </div>

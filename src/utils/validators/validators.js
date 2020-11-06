@@ -1,4 +1,4 @@
-export const requiredField = value => { //Обязательное поле
+export const requiredField = value => {
     if(value)
         return undefined
     return 'Field is required'

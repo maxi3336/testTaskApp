@@ -12,7 +12,7 @@ const Offers = props => {
     const onNetworkSubmit = (data) => onSubmitUtil.onNetworkSubmit(data, props.addNetwork)
 
     return (
-        <div className="ml-5 mt-5">
+        <div className="ml-5">
 
             <div className="row mb-3">
                 <div className="col p-3 mr-3" style={styles.offers.elementBackground}>

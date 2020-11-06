@@ -4,21 +4,12 @@ import styles from "../../styles/styles";
 import 'react-dropdown/style.css'
 import OfferCreatingForm from "./OfferForms/OfferCreatingForm";
 import NetworkCreatingForm from "./OfferForms/NetworkCreatingForm";
+import {onSubmitUtil} from "../../utils/onSubmitUtil/onSubmitUtil";
+import MainRowCreator from "./OfferForms/MainRowCreator";
 
 const Offers = props => {
-    const onOfferSubmit = data => {
-        let networkId = null
-        let networkName = null
-        if (data.network) {
-            networkId = data.network.split(' ')[1]
-            networkName = data.network.split(' ')[0]
-        }
-        console.log(data)
-        props.addOffer(networkId, data.offerName, data.offerUrl, networkName)
-    }
-    const onNetworkSubmit = data => {
-        props.addNetwork(data.networkName, data.postbackUrl)
-    }
+    const onOfferSubmit = (data) => onSubmitUtil.onOfferSubmit(data, props.addOffer)
+    const onNetworkSubmit = (data) => onSubmitUtil.onNetworkSubmit(data, props.addNetwork)
 
     return (
         <div className="ml-5 mt-5">
@@ -33,45 +24,11 @@ const Offers = props => {
             <div className="row">
                 <div className="col">
                     <NetworkCreatingForm onSubmit={onNetworkSubmit}/>
-                    <div className="row mr-3 p-4" style={styles.offers.elementBackground}>
-                        <div className="row w-100 mb-4" style={{fontSize: 14}}>
-                            <div className="col-2">
-                                <span>Name/ID</span>
-                            </div>
-                            <div className="col-4">
-                                <span>Postback URL</span>
-                            </div>
-                            <div className="col-3">
-                                <span>Offer URL template</span>
-                            </div>
-                            <div className="col-3">
-                                <span>Date</span>
-                            </div>
-                        </div>
-                        <div style={{overflow: 'auto', height: 300}}>
-                            {props.networkList}
-                        </div>
-                    </div>
+                    <MainRowCreator mainClass={'row mr-3'} secondColName={'Postback URL'} list={props.networkList}
+                                    thirdColName={'Offer URL template'} height={300}/>
                 </div>
-                <div className="col p-4" style={styles.offers.elementBackground}>
-                    <div className="row w-100 mb-4" style={{fontSize: 14}}>
-                        <div className="col-2">
-                            <span>Name/ID</span>
-                        </div>
-                        <div className="col-4">
-                            <span>Offer URL</span>
-                        </div>
-                        <div className="col-3">
-                            <span>Network</span>
-                        </div>
-                        <div className="col-3">
-                            <span>Date</span>
-                        </div>
-                    </div>
-                    <div style={{overflow: 'auto', height: 500}}>
-                        {props.offersList}
-                    </div>
-                </div>
+                <MainRowCreator mainClass={'col'} secondColName={'Offer URL'} list={props.offersList}
+                                thirdColName={'Network'} height={500}/>
             </div>
         </div>
     )

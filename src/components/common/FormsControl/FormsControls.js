@@ -11,7 +11,7 @@ export const Input = ({input, meta, ...props}) => {
                     {meta.error}
                 </span>
             }
-            <input {...input} {...props}/>
+            <input {...input} {...props} value={props.defaultValue}/>
         </div>
     )
 }

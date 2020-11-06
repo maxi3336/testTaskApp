@@ -23,7 +23,7 @@ const OfferCreatingForm = props => {
                 </div>
                 <div className="col d-flex flex-column">
                     <label>Network</label>
-                    <Field className="btn btn-secondary dropdown-toggle" name="network" component="select" placeholder="Choose a network">
+                    <Field className="btn btn-secondary dropdown-toggle" name="network" component="select">
                         <option value="" selected>Choose a network</option>
                         {props.networks}
                     </Field>

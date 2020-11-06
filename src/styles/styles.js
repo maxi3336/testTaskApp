@@ -1,5 +1,9 @@
-// eslint-disable-next-line import/no-anonymous-default-export
+import background from "../assets/BackgroundLights.jpg";
+
 export default {
+    main: {
+      backgroundStyle: {backgroundImage: `url(${background})`, backgroundPosition: 'bottom', backgroundRepeat: 'no-repeat'}
+    },
     menu: {
         activeLinkStyle: {background: '#333333', color: 'white'},
         asideMenuStyle: {width: 300, background: 'rgba(245, 245, 244, .7)', height: 875}

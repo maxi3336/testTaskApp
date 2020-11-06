@@ -3,7 +3,7 @@ import styles from "../../../styles/styles";
 
 const MainRowCreator = props => {
     return (
-        <div className={`${props.mainClass} p-4`} style={styles.offers.elementBackground}>
+        <div className={`${props.mainClass} p-4 w-100`} style={styles.offers.elementBackground}>
             <div className="row w-100 mb-4" style={{fontSize: 14}}>
                 <div className="col-3">
                     <span>Name/ID</span>
@@ -18,7 +18,7 @@ const MainRowCreator = props => {
                     <span>Date</span>
                 </div>
             </div>
-            <div style={{overflow: 'auto', height: props.height}}>
+            <div className="w-100" style={{overflow: 'auto', height: props.height}}>
                 {props.list}
             </div>
         </div>

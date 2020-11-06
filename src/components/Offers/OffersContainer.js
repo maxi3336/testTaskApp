@@ -7,15 +7,15 @@ import {addNetwork, addOffer, deleteNetwork, deleteOffer} from "../../redux/redu
 const mapStateToProps = state => {
     const networkList =
         state.offers.networkList.map(el =>
-            <OfferItem type='network' id={el.id} name={el.name} url={el.postbackUrl} third={el.offerUrl} date={el.date}/>)
+            <OfferItem key={el.id} type='network' id={el.id} name={el.name} url={el.postbackUrl} third={el.offerUrl} date={el.date}/>)
 
     const offersList =
         state.offers.offersList.map(el =>
-            <OfferItem type='offer' id={el.id} name={el.name} url={el.offerUrl} third={el.network} date={el.date}/>)
+            <OfferItem key={el.id} type='offer' id={el.id} name={el.name} url={el.offerUrl} third={el.network} date={el.date}/>)
 
     const networks =
         state.offers.networkList.map(el =>
-            <option value={el.name + ' ' + el.id}>{el.name}</option>)
+            <option key={el.id} value={el.name + ' ' + el.id}>{el.name}</option>)
 
     return {
         networkList: networkList,

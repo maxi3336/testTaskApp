@@ -7,7 +7,6 @@ export const onSubmitUtil = {
             networkName = data.network.split(' ')[0]
         }
         add(networkId, data.offerName, data.offerUrl, networkName)
-        console.log(data)
     },
     onNetworkSubmit(data, add) {
         add(data.networkName, data.postbackUrl)

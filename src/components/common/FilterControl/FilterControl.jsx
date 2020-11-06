@@ -21,7 +21,7 @@ const FilterControl = props => {
 }
 
 const FilterTransform = (data, condition, action) => {
-    return data.map(el => <FilterControl name={el} condition={condition} action={action}/>)
+    return data.map(el => <FilterControl key={el} name={el} condition={condition} action={action}/>)
 }
 
 export default FilterTransform

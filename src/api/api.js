@@ -15,5 +15,11 @@ export const useAPI = {
             characters.push(...response.data.results)
         }
         return characters
+    },
+    getCharacter (id) {
+        return instance.get(`character/${id}`)
+    },
+    getLocation (url) {
+        return axios.get(url)
     }
 }

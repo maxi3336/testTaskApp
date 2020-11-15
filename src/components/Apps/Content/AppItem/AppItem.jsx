@@ -1,5 +1,7 @@
 import React from 'react'
 import styles from "../../../../styles/styles";
+import {getCurrentCharacter} from "../../../../redux/reducers/appsReducer";
+import {connect} from "react-redux";
 
 const AppItem = props => {
     return (
@@ -16,8 +18,9 @@ const AppItem = props => {
                             : <span className="text-primary">{props.status}</span>
                 }
             </div>
+            <button className="btn btn-primary mt-2" onClick={() => props.getCurrentCharacter(props.id)}>More</button>
         </div>
     )
 }
 
-export default AppItem
+export default connect(null, {getCurrentCharacter})(AppItem)
